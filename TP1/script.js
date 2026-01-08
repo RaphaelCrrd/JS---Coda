@@ -9,3 +9,9 @@ console.log("La classe est ouverte : ", estOuverte);
 // Partie 2
 const eleve = { name : "Raphael", noteMaths : 16, noteFrancais : 12};
 console.log("Le prénom de l'éleve est ", eleve.name);
+
+// Partie 3
+const eleves = [{ name : "Maxime"}, {name : "Melvin"}, {name : "Lise"}];
+for (let i = 0; i < eleves.length; i++){
+    console.log(eleves[i].name);
+}

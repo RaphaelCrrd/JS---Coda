@@ -34,3 +34,25 @@ for (let i = 0; i < eleves.length; i++){
         console.log(eleves3[i].name, "Admis");
     }
 }
+
+// Partie 6
+const eleves4 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 9}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
+for (let i = 0; i < eleves4.length; i++){
+    let moyenne = (eleves4[i].noteMaths + eleves4[i].noteFrançais) / 2;
+    console.log(moyenne);
+    if (moyenne >= 16) {
+        console.log(eleves4[i].name, "Tres bien");
+    }
+    else if (moyenne >= 14) {
+        console.log(eleves4[i].name, "Bien");
+    }
+    else if (moyenne >= 12) {
+        console.log(eleves4[i].name, "Assez bien");
+    }
+    else if (moyenne >= 10) {
+        console.log(eleves4[i].name, "Passable");
+    }
+    else {
+        console.log(eleves4[i].name, "Insuffisant");
+    }
+}

@@ -56,3 +56,11 @@ for (let i = 0; i < eleves4.length; i++){
         console.log(eleves4[i].name, "Insuffisant");
     }
 }
+
+// Partie 7
+let nombreEleves2 = 0;
+const eleves5 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 9}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
+while (nombreEleves2 < eleves5.length) {
+    nombreEleves2 += 1;
+}
+console.log(nombreEleves2);

@@ -15,3 +15,10 @@ const eleves = [{ name : "Maxime"}, {name : "Melvin"}, {name : "Lise"}];
 for (let i = 0; i < eleves.length; i++){
     console.log(eleves[i].name);
 }
+
+// Partie 4
+const eleves2 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 16}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
+for (let i = 0; i < eleves.length; i++){
+    let moyenne = (eleves2[i].noteMaths + eleves2[i].noteFrançais) / 2;
+    console.log(eleves2[i].name, "a une moyenne de ", moyenne);
+}

@@ -26,21 +26,21 @@ for (let i = 0; i < eleves.length; i++){
 // Partie 5
 const eleves3 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 9}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
 for (let i = 0; i < eleves.length; i++){
-    let moyenne = (eleves3[i].noteMaths + eleves3[i].noteFrançais) / 2;
+    let moyenne = (eleves3[i].noteMaths + eleves3[i].noteFrançais) / 2; // Prend la note des deux matieres pour en faire la moyenne
     if (moyenne < 10) {
-        console.log(eleves3[i].name, "Refusé");
+        console.log(eleves3[i].name, "Refusé");  // Affiche le nom de l'éleve et "refusé"
     }
     else {
-        console.log(eleves3[i].name, "Admis");
+        console.log(eleves3[i].name, "Admis"); // Affiche le nom de l'éleve et "admis"
     }
 }
 
 // Partie 6
 const eleves4 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 9}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
 for (let i = 0; i < eleves4.length; i++){
-    let moyenne = (eleves4[i].noteMaths + eleves4[i].noteFrançais) / 2;
+    let moyenne = (eleves4[i].noteMaths + eleves4[i].noteFrançais) / 2;  // Prend la note des deux matieres pour en faire la moyenne
     console.log(moyenne);
-    if (moyenne >= 16) {
+    if (moyenne >= 16) {  // Selon la moyenne, afficher la bonne mention
         console.log(eleves4[i].name, "Tres bien");
     }
     else if (moyenne >= 14) {
@@ -60,7 +60,17 @@ for (let i = 0; i < eleves4.length; i++){
 // Partie 7
 let nombreEleves2 = 0;
 const eleves5 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 9}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
-while (nombreEleves2 < eleves5.length) {
+while (nombreEleves2 < eleves5.length) { // Tant que le compteur est inferieur au nombre réel d'eleves
     nombreEleves2 += 1;
 }
 console.log(nombreEleves2);
+
+// Bonus
+const eleves6 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 16}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
+let sommeMoyennes = 0;
+for (let i = 0; i < eleves.length; i++){
+    let moyenne = (eleves6[i].noteMaths + eleves6[i].noteFrançais) / 2;
+    let sommeMoyennes += moyenne;
+    console.log("La moyenne de la classe est", moyenneClasse);
+}
+sommeMoyennes += moyenne;

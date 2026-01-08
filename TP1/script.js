@@ -22,3 +22,15 @@ for (let i = 0; i < eleves.length; i++){
     let moyenne = (eleves2[i].noteMaths + eleves2[i].noteFrançais) / 2;
     console.log(eleves2[i].name, "a une moyenne de ", moyenne);
 }
+
+// Partie 5
+const eleves3 = [{ name : "Maxime", noteMaths : 13, noteFrançais : 16}, {name : "Melvin", noteMaths : 10, noteFrançais : 9}, {name : "Lise", noteMaths : 11, noteFrançais : 15}];
+for (let i = 0; i < eleves.length; i++){
+    let moyenne = (eleves3[i].noteMaths + eleves3[i].noteFrançais) / 2;
+    if (moyenne < 10) {
+        console.log(eleves3[i].name, "Refusé");
+    }
+    else {
+        console.log(eleves3[i].name, "Admis");
+    }
+}

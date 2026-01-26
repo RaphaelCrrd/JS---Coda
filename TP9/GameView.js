@@ -5,6 +5,7 @@ class GameView {
         this.ctx = this.canvas.getContext("2d");
         this.width = this.canvas.width;
         this.height = this.canvas.height;
+        this.sprites = {};
     }
 
     clear() {
@@ -32,9 +33,10 @@ class GameView {
             const img = new Image();
             img.src = path;
             this.sprites[path] = img;
+            }
 
         return this.sprites[path];
-        }
+        
     }
 
 
@@ -42,32 +44,53 @@ class GameView {
         // Resolution de base : 800*600 (petit sur macbook, 3024*1964)
         // Le backend envoie 0.43012 comme position X par exemple, ça veut dire 43,012% de la largeur totale du canvas
         const canvasX = player.renderX * this.width;
-        const canvasY = player.renderY * this.width;
+        const canvasY = player.renderY * this.height;
         player.animate();
 
-        const spriteSize = player.isAttacking ? 192 : 64;
+        let spriteSize = 64;
         const spriteImg = this.loadSprite(player.skin);
+        // console.log("sprite:", spriteImg, "loaded:", spriteImg?.complete);
 
-        if (player.isAttacking) {
+        let sx = 0;
+        let sy = 0;
+
+        const lookDirection = {
+            0: 0,
+            1: 3,
+            2: 2,
+            3: 1,
+        };
+
+        const spriteDirection = lookDirection[player.direction] ?? player.direction;
+
+        if (player.isAttacking  || player.currentAttackSpriteStep > 0|| player.attackSpriteIndex > 0) {
+            spriteSize = 192
             sx = player.attackSpriteIndex * spriteSize;
+            sy = 3456 + (spriteDirection * spriteSize);
         } 
 
         else if (player.isWalking) {
             sx = player.walkSpriteIndex * spriteSize;
-        } 
-
-        else {
-            sx = (player.idleSpriteIndex || 0) * spriteSize; 
+            sy = (8 + spriteDirection) * spriteSize;
         }
 
-        sy = player.direction * spriteSize;
+        else {
+            sx = (player.idleSpriteIndex || 0) * spriteSize;
+            sy = spriteDirection * spriteSize;
+        }
+
 
         if (spriteImg.complete) {
             const offsetX = spriteSize / 2;
             const offsetY = spriteSize / 2;
 
-            this.ctx.draxImage(spriteImg, sx, sy, spriteSize, spriteSize, canvasX - offsetX, canvasY - offsetY, spriteSize, spriteSize);
+            this.ctx.drawImage(spriteImg, sx, sy, spriteSize, spriteSize, canvasX - offsetX, canvasY - offsetY, spriteSize, spriteSize);
         }
+
+        // console.log(player.renderX, player.renderY);
+        
+        
+
 
     }
 }

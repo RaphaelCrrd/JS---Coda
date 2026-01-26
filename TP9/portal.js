@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const skinPath = `assets/${i}.png`;
 
-        // On crée la structure demandée
         item.innerHTML = `
             <label class="sprite-box" for="sprite${i}">
                 <canvas id="canvas${i}" width="64" height="64"></canvas>
@@ -34,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         img.onload = () => {
             // Paramètres : image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight
-            // On suppose que tes sprites font 64x64.
             ctx.drawImage(img, 0, 128, 64, 64, 0, 0, 64, 64);
         };
     }

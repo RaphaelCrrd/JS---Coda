@@ -45,7 +45,7 @@ class GameController {
             };
 
             this.socket.onmessage = (e) => {
-                console.log("Message recieved");
+                console.log("Message reçu :");
 
                 // this.socket.send(JSON.parse(e.data));
                 const data = JSON.parse(e.data);

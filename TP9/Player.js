@@ -15,23 +15,26 @@ class Player {
         this.maxRegeneration = 2;
         this.damage = 1;
         this.direction = 3; // Dans le serveur, 3 correspond à vers le sud pour voir la tete du personnage au spawn
-        this.isWalking = true;
+        this.isWalking = false;
         this.isAttacking = false;
         this.isDying = false;
         this.walkSpriteDuration = 2;
         this.walkSpriteIndex = 0;
         this.walkSpriteNumber = 9;
-        this.attackSpriteDuration = 2;
+        this.attackSpriteDuration = 3;
         this.attackSpriteIndex = 0;
-        this.attackSpriteNumber = 9; // Mettre le bon nombre de sprite en tout dans l'annimation
+        this.attackSpriteNumber = 6;
         this.dyingSpriteDuration = 2;
         this.dyingSpriteIndex = 0;
-        this.dyingSpriteNumber = 9; // Pareil, mettre le bon nombre
+        this.dyingSpriteNumber = 6;
         this.currentWalkSpriteStep = 0;
         this.currentAttackSpriteStep = 0;
         this.currentDyingSpriteStep = 0;
         this.currentIdleSpriteStep = 0;
-
+        this.idleSpriteDuration = 2;
+        this.idleSpriteIndex = 0;
+        this.idleSpriteNumber = 6;
+        this.currentIdleSpriteStep = 0;
         }
 
     update(updateData) {
@@ -65,7 +68,7 @@ class Player {
             }
         }
 
-        else if (this.isAttacking || this.currentAttackSpriteStep > 0) {
+        else if (this.isAttacking || this.currentAttackSpriteStep > 0 || this.attackSpriteIndex > 0) {
 
             this.currentAttackSpriteStep++;
             if (this.currentAttackSpriteStep >= this.attackSpriteDuration) {
@@ -90,17 +93,26 @@ class Player {
         }
 
         else { // idle
-            
+            this.currentIdleSpriteStep++;
+            if (this.currentIdleSpriteStep >= this.idleSpriteDuration) {
+                this.currentIdleSpriteStep = 0;
+                this.dyingIdleIndex++;
+                }
+            if (this.dyingIdleIndex >= this.dyingIdleNumber) {
+                this.idleSpriteIndex = 0;
+            }
         }
-        console.log("Walk animation :\n");
-        console.log("isWalking = ", this.isWalking);
-        console.log("walkSpriteIndex = ", this.walkSpriteIndex);
-        console.log("walkSpriteNmber = ", this.walkSpriteNumber);
-        console.log("curentWalkSpriteStep = ", this.currentWalkSpriteStep);
-        console.log("Attack animation :\n");
-        console.log("isAttacking = ", this.isAttacking);
-        console.log("attackSpriteIndex = ", this.attackSpriteIndex);
-        console.log("attackSpriteNumber = ", this.attackSpriteNumber);
+        if (this.isAttacking) {
+            console.log("Walk animation :\n");
+            console.log("isWalking = ", this.isWalking);
+            console.log("walkSpriteIndex = ", this.walkSpriteIndex);
+            console.log("walkSpriteNmber = ", this.walkSpriteNumber);
+            console.log("curentWalkSpriteStep = ", this.currentWalkSpriteStep);
+            console.log("Attack animation :\n");
+            console.log("isAttacking = ", this.isAttacking);
+            console.log("attackSpriteIndex = ", this.attackSpriteIndex);
+            console.log("attackSpriteNumber = ", this.attackSpriteNumber);
+        }
 
     }
     

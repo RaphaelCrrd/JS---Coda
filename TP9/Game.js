@@ -70,10 +70,10 @@ class Game {
          }
          else {
             const newPlayer = new Player(
+               id,
                dataFromServer.name,
                dataFromServer.skinPath,
-               dataFromServer.position[0],
-               dataFromServer.position[1]
+               dataFromServer.position,
             );
 
             this.players[id] = newPlayer;

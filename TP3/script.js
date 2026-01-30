@@ -246,7 +246,7 @@ console.log("La plus petite moyenne est celle de ",eleves[0].prenom, "avec une m
 for (let i = 0; i < eleves.length; i++) {
     let indiceMin = i;
     for(let j = i +1; j < eleves.length; j++) {
-        if(parseFloat(eleves[j].moyenne) < parseFloat(eleves[indiceMin].moyenne)) { // parseFloat permet de transfoermer la faleur de string a float (toFixed l'a passé en str)
+        if(parseFloat(eleves[j].moyenne) < parseFloat(eleves[indiceMin].moyenne)) { // parseFloat permet de transformer la faleur de string a float (toFixed l'a passé en str)
             indiceMin = j;
         }
     }
@@ -271,7 +271,3 @@ eleves[indiceMin] = temp1;
 
 console.log("Tableau après échange avec l'indice 0 :", eleves);
 
-
-for (let i = 0; i < eleves.length; i++) {
-    console.log("Position " + i + " : " + eleves[i].prenom + " (" + eleves[i].moyenne + ")");
-}

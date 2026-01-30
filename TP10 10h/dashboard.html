@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <nav>
+            <a id="logo" href="#">JSARENA</a>
+            <a href="portal.html">Portail</a>
+            <a href="game.html">Game</a>
+        </nav>
+    </header>
+
+    <main>
+    <section id="config-section">
+        <form id="server-form">
+            <input type="text" id="server-address" placeholder="http://13.38.137.68:8000/" required>
+            <button type="submit">Connexion</button>
+        </form>
+        <p>Serveur : <span id="current-ip">Aucun</span> | <span id="error-message" style="color:red"></span></p>
+    </section>
+
+    <section id="player-stats-section">
+        <h2>Statistiques détaillées</h2>
+        <select id="player-select">
+            <option value="">-- Choisir un joueur --</option>
+        </select>
+
+        <div id="stats-display" class="stats-card">
+            <p><strong>Joueur :</strong> <span id="stat-name">-</span></p>
+            <p><strong>Kills :</strong> <span id="stat-kills">-</span></p>
+            <p><strong>Morts :</strong> <span id="stat-deaths">-</span></p>
+            <p><strong>Ratio K/D :</strong> <span id="stat-ratio">-</span></p>
+            <p><strong>Dernière Position :</strong> <span id="stat-last-pos">-</span></p>
+            <p><strong>Classement Moyen :</strong> <span id="stat-avg-rank">-</span></p>
+        </div>
+    </section>
+
+    <section id="ranking-section">
+        <h2>Classement Général</h2>
+        <table id="ranking-table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Joueur</th>
+                    <th>Kills</th>
+                    <th>Morts</th>
+                    <th>Ratio K/D</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </section>
+</main>
+    <script src="dashboard.js"></script>
+</body>
+</html>

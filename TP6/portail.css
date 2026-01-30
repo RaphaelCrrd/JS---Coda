@@ -152,9 +152,6 @@ input[type="radio"]:checked::after {
     color: white;
 }
 
-input[type="radio"]:checked + .sprite-box {
-    border: 2px solid #00ff00;
-}
 
 .btn-join {
     background: transparent;

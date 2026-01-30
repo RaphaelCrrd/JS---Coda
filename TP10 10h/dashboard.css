@@ -1,0 +1,37 @@
+body {
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    border-bottom: 1px solid white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background: #1a1a1a;
+}
+
+header nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+#logo {
+  position: static;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#error-message {
+    color: red;
+}
+

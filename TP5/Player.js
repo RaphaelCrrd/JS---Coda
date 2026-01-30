@@ -1,3 +1,7 @@
+const direction {
+
+}
+
 class Player {
     constructor(name, userskin, positionX, positionY) {
         this.name = name;
@@ -47,7 +51,7 @@ class Player {
         this.maxCooldown = updateData.maxCooldown;
         this.damage = updateData.damage;
         this.regeneration = updateData.regeneration;
-        this.maxRegeneration = updateDate.maxRegeneration;
+        this.maxRegeneration = updateData.maxRegeneration;
         this.direction = updateData.direction;
         this.isWalking = updateData.isWalking;
         this.isAttacking = updateData.isAttacking;
@@ -67,7 +71,7 @@ class Player {
             }
         }
 
-        else if (this.isAttacking) {
+        else if (this.isAttacking || this.currentAttackSpriteStep > 0) {
 
             this.currentAttackSpriteStep++;
             if (this.currentAttackSpriteStep >= this.attackSpriteDuration) {
@@ -79,7 +83,7 @@ class Player {
             }
         }
 
-        else if (this.isDying) {
+        else if (this.isDying || this.currentDyingSpriteStep > 0) {
 
             this.currentDyingSpriteStep++;
             if (this.currentDyingSpriteStep >= this.dyingSpriteDuration) {
@@ -99,10 +103,10 @@ class Player {
         console.log("walkSpriteIndex = ", this.walkSpriteIndex);
         console.log("walkSpriteNmber = ", this.walkSpriteNumber);
         console.log("curentWalkSpriteStep = ", this.currentWalkSpriteStep);
-        // console.log("Attack animation :\n");
-        // console.log("isAttacking = ", this.isAttacking);
-        // console.log("attackSpriteIndex = ", this.attackSpriteIndex);
-        // console.log("attackSpriteNumber = ", this.attackSpriteNumber);
+        console.log("Attack animation :\n");
+        console.log("isAttacking = ", this.isAttacking);
+        console.log("attackSpriteIndex = ", this.attackSpriteIndex);
+        console.log("attackSpriteNumber = ", this.attackSpriteNumber);
 
     }
     

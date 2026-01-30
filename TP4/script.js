@@ -351,3 +351,14 @@ triParSelection(classe);
 
 console.log("Afficher Eleves");
 afficherEleves(classe);
+
+
+
+// Python Clem
+
+if liste[i] > liste[iMax]
+
+iMax == i
+
+
+t = [2,3,3,5]
